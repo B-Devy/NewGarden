@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    /*----COULEURS----*/
+    --gold: rgb(173, 172, 80);
+    --fond0: #2e2e2e;
+    --fond1: rgb(224, 216, 177);
+    --fond2: #ffb62e;
+    --noir: rgb(23,23,23);
+    --gris: #3d3d3d;
+    --colorsign: rgb(151, 151, 151);
+    --ombre: #161616a4;
+    --police1: 'Old Standard TT', serif;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: var(--fond0);
+    display: flex;
+    justify-content: center;
+}
+#limite {
+    width: 1680px;
+    height: 100vh;
+    background-color: var(--fond2) ;
+}
+/*-----------------HEADER-------------------*/
+header {
+    z-index: 3;
+    background-color: var(--noir);
+    border: solid 3px #3d3d3d;
+    position: fixed;
+    top:0;
+    width: 1680px;
+}
+#logo {
+    position: absolute;
+    top:0;
+    left: 250px;
+    text-align: center;
+    background-color: var(--noir);
+    border: solid 3px var(--gold);
+    width: 150px;
+    height: 110px;
+}
+#logo div {
+    height: 100%;
+    max-width: 100%;
+    background-image: url(../assets/logotransp.png);
+    background-size: cover;
+   /* border: purple solid 1px;*/
+}
+#menu {
+    color: var(--gold);
+    /*border: dotted 2px red;*/
+}
+#menu ul {
+    display: flex;
+    justify-content: start;
+    width: 800px;
+    margin-left: 500px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#menu li {
+    font-family: 'Old Standard TT', serif;
+    color:white;
+    font-size: 25px;
+    /*border: dotted 2px yellow;*/
+    list-style: none;;
+    margin-left: 30px;
+}
+#connex {
+    position: absolute;
+    top:5px;
+    right:50px;
+    border: var(--gris) 3px solid;
+    width: 220px;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px 0 5px;
+}
+#favconnex {
+    background-image: url(../assets/favconnex.png);
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+#connex p {
+    color:white;
+    font-family: 'Old Standard TT', serif;
+    font-size: 25px;  
+}
+
+/*---------------------SEC1------------------*/
+#sec1 {
+    width: 100%;
+    height: 800px;
+    background-image: url(../assets/devanture.jpg);
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+#ombre {
+    background-color: var(--ombre);
+    width: 530px;
+    height: 420px;
+    margin-top: 5%;
+    border-radius: 300px 150px 300px 150px;
+    box-shadow: 0px 0px 50px 55px var(--ombre);
+}
+#logo2 {
+    width: 520px;
+    height: 100%;
+    background-image: url(../assets/logotransp.png);
+    background-repeat: no-repeat;
+}
+
+/*------------------SEC2 ------------------*/
+#sec2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    background-color: var(--fond2);
+}
+#img_sec_2 {
+    background-image: url(../assets/photorepas.png);
+    width: 1000px;
+    height: 300px;  
+}
+
+/*-------------------SEC3--------------------*/
+#sec3 {
+    height: 600px;
+    width: 1680px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/section.png);
+    background-size: cover;
+}
+#img_sec_3 {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+#barman {
+    background-image: url(../assets/barman.jpg);
+    background-size: cover;
+    width: 400px;
+}
+#barmantext {
+    font-family: 'Old Standard TT', serif;
+    color: white;
+    width: 500px;
+}
+#barmantext h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 80px;
+    margin-bottom: 15px;
+}
+#barmantext p {
+    font-size: 25px;
+}
+
+/*------------SEC4---------------*/
+#sec4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1680px;
+    background-color: var(--fond2);
+    
+}
+#img_sec_4 {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: solid transparent 2px;
+}
+
+#sec4 h2 {
+    font-size: 55px;
+    color: var(--noir);
+    font-family: var(--police1);
+    margin: 20px 0 20px;
+}
+
+
+
+/*--------------FICHE COCKTAIL----------------*/
+.fiche {
+    position: relative;
+    width: 300px;
+    height: 550px;
+    border: 1px solid var(--noir);
+    box-shadow: 2px 2px 20px var(--ombre);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+    background-color: var(--noir);
+    color:white;
+    font-family: var(--police1);
+    
+}
+.fiche h3 {
+    font-size: 30px;
+}
+.fiche_img {
+    width: 200px;
+    height: 300px;
+    border: solid 2px white;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+.price {
+    position:absolute;
+    top: 340px;
+    right: 20px;
+    border: solid white 2px;
+    background-color: black;
+    color: white;
+    font-family: var(--police1);
+    font-size: 40px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+.price p {
+    /*border: white 1px dotted;*/
+    height: 42px;
+}
+.recette {
+    margin: 20px 20px 0 20px;
+    /*border: solid white 1px;*/
+}
+/*-------------FOOTER-----------------*/
+footer {
+    display:flex;
+    justify-content: center;
+    font-family: 'Old Standard TT', serif;
+    background-image: url(../assets/section.png);
+    background-size: cover;
+    width: 1680px;
+    height: 600px;
+    padding-top: 150px;
+}
+#informations {
+    width: 900px;
+    height: 260px;
+    display: flex;
+    justify-content: space-between;
+    /*border: dotted purple 2px;*/
+}
+footer li {
+    list-style-type: none;
+    color:white;
+    font-size: 28px;
+    line-height: 2em;
+}
+footer li a{
+    list-style-type: none;
+    color:white;
+}
+#logofoot {
+    width: 400px;
+    height: 260px;
+    background-image: url(../assets/logotransp.png);
+    background-size: cover;
+}
+/*----------------SIGNATURE-------------------*/
+#signature {
+    background-color: var(--noir);
+    border: solid 3px var(--gris);
+}
+#signature p{
+    color: var(--colorsign);
+    font-size: 24px;
+    font-family: 'Old Standard TT', serif;
+    margin: 20px 0 20px 50px;
+}
+#signature p a{
+    color: var(--colorsign);
+}
+
+
+
+
+
+
+
+
+
+
+
+
