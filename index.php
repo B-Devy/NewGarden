@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Garden Bar</title>
     <link rel="stylesheet" href="design/style.css">
+    <script src="design/script.js" defer></script>
 </head>
 
 <body>
