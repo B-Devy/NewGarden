@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,6 +25,7 @@
     </section>
 
     <?php
+        print_r($_SESSION);
         require 'composants/footer.php';
     ?>
 

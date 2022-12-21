@@ -1,13 +1,7 @@
 <?php
-//    session_start();
+    session_start();
     include('admin/config.php');
-//    error_reporting(0);
-
-
-
-
-
-
+    error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,33 +14,7 @@
     <script src="design/script.js" defer></script>
 </head>
 
-<body>
-    <?php
-        
-    if(!empty($_GET['mail']) && !empty($_GET['pass'])){
-        $mail = $_GET['mail'];
-        $pass = $_GET['pass'];
-        
-        $req = $db->prepare('SELECT adressemail, motdepasse FROM users WHERE adressemail = ? AND motdepasse = ?');
-        $req->execute(array($mail, $pass));
-        $teste = $req->fetch(PDO::FETCH_ASSOC);
-        //$teste = $req->fetchAll(PDO::FETCH_ASSOC);
-        /*
-        echo '<pre>';
-        print_r($teste['adressemail']);
-        print_r($teste['motdepasse']);
-        echo '</pre>';*/
-        if ($mail === $teste['adressemail'] && $pass === $teste['motdepasse']) {
-            header('location: connexion.php');
-            exit();
-        } else {
-            exit();
-            //header('location: index.php');
-        }
-    
-    }
-
-    ?>    
+<body> 
 <!--Copyright BERTRAND DEVY  - @:www.bertrand-devy.ovh-->
 <div id="limite">
     <?php
@@ -58,7 +26,12 @@
         </div>
     </section>
 
+    <?php
+    print_r($_SESSION);
+    ?>
+
     <section id="sec2">
+        <h2>Notre concept</h2>
         <div id="img_sec_2"></div>
     </section>
 
