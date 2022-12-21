@@ -2,8 +2,13 @@
 //    session_start();
     include('admin/config.php');
 //    error_reporting(0);
-?>
 
+
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,6 +21,33 @@
 </head>
 
 <body>
+    <?php
+        
+    if(!empty($_GET['mail']) && !empty($_GET['pass'])){
+        $mail = $_GET['mail'];
+        $pass = $_GET['pass'];
+        
+        $req = $db->prepare('SELECT adressemail, motdepasse FROM users WHERE adressemail = ? AND motdepasse = ?');
+        $req->execute(array($mail, $pass));
+        $teste = $req->fetch(PDO::FETCH_ASSOC);
+        //$teste = $req->fetchAll(PDO::FETCH_ASSOC);
+        /*
+        echo '<pre>';
+        print_r($teste['adressemail']);
+        print_r($teste['motdepasse']);
+        echo '</pre>';*/
+        if ($mail === $teste['adressemail'] && $pass === $teste['motdepasse']) {
+            header('location: connexion.php');
+            exit();
+        } else {
+            exit();
+            //header('location: index.php');
+        }
+    
+    }
+
+    ?>    
+<!--Copyright BERTRAND DEVY  - @:www.bertrand-devy.ovh-->
 <div id="limite">
     <?php
         require 'composants/header.php';
@@ -48,16 +80,12 @@
                 require 'composants/fiche.php';
             ?>
 
-
         </div>
     </section>
 <?php
     require 'composants/footer.php';
     require 'composants/signature.php';
 ?>
-
-    
-
 
 </div>    
 </body>

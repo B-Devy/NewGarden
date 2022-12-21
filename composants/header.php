@@ -1,5 +1,5 @@
 
-<div id="headeretendu">
+<div id="headeretendu"> 
     <header>
         <div id="logo">
             <div></div>
@@ -21,8 +21,11 @@
     </header>
 
     <div id="connecbox"> 
-        <label for="mail">Votre mail :</label><br><input type="text" name="mail" placeholder="Adresse mail"><br>
-        <label for="pass">Mot-de-passe :</label><br><input type="text" name="pass" placeholder="****">
+        <form method="GET" action="index.php">
+            <label for="mail">Votre mail :</label><br><input type="text" name="mail" placeholder="Adresse mail"><br>
+            <label for="pass">Mot-de-passe :</label><br><input type="text" name="pass" placeholder="****">
+            <input type="submit" value="Se Connecter" id="btn_conn">
+        </form>
     </div>
 </div>
 
