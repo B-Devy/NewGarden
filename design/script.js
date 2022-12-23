@@ -23,7 +23,7 @@ rubrique[4].addEventListener('click', function() {
 });
 
 /*-------MAP LEAFLET-------*/
-var map = L.map('map').setView([48.578984, 7.755616], 16);
+var map = L.map('map').setView([48.578984, 7.755616], 14);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
