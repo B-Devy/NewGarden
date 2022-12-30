@@ -1,6 +1,6 @@
 <?php
-include('admin/config.php'); /*important de mettre avant la session, visiblement */
-session_start()
+    include('admin/config.php'); /*important de mettre avant la session, visiblement */
+    session_start()
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,29 @@ session_start()
     <?php
         require 'composants/header.php';
     ?>
+
     <section id="secconn">
+    <h1>CONNEXION</h1>
+
+    <?php
+    echo "<h2>Bonjour ".$_SESSION['mail'].", vous etes connecter</h2>";
+    ?>
+    <?php
+        if(isset($_GET['ajouter'])) {
+            echo "ajouteur!"; /*PROBLEME LA PAGE SE REMET A JOUR */
+        }
+    ?>
+    <form action="get" method="connexion.php">
+        <label for="nom">Nom:</label><input name="nom" type="text">
+        <label for="prix">Prix:</label><input name="prix" type="text"><br>
+        <label for="note">Note:</label><input name="note" type="text">
+        <label for="ingredient">Ingredients:</label><input name="ingredient" type="text"><br>
+        <label for="img">Image:</label><input name="img" type="text"><br>
+        <input type="submit" name="ajouter" value="Ajouter">
+    </form>
+
+   
+
     <?php
         $req = $db->prepare('SELECT * FROM cocktail');
         $req->execute();
@@ -43,16 +65,39 @@ session_start()
                             <td>'.$truc['note'].'</td>
                             <td>'.$truc['ingredient'].'</td>
                             <td>'.$truc['img'].'</td>
-                            <td><button>Supprimer</button></td>
+                            <td>
+                            <form method="get">
+                                <input type="text" name="suppression" value="'.$truc['id'].'"  />
+                                <input type="submit"  id="'.$truc['id'].'" value="Supprimer"/>
+                            </form>
+                            </td>
                         </tr>';
                 }
                 echo';
                 </table>';
-    ?>
+                ?>
+                <?php
+                if(isset($_GET['suppression'])) {
+                    $index = $_GET['suppression'];
+                    try {
+                            $ligne = $db->prepare('SELECT * FROM cocktail WHERE id = ' .$index);
+                            $ligne->execute();
+                            $obj = $ligne->fetch(PDO::FETCH_ASSOC);
+                            echo print_r($obj). '<br>';
+                            echo $obj['ingredient'];
+                            
+                            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                            $sql2 = 'INSERT INTO savetable (id, nom, prix, note, ingredient, img) VALUES ("'.$obj['id'].'","'.$obj['nom'].'","'.$obj['prix'].'","'.$obj['note'].'","'.$obj['ingredient'].'","'.$obj['img'].'")';
+                            $db->exec($sql2);
+
+                            $suppr = $db->prepare('DELETE FROM cocktail WHERE id = ' .$index);
+                            $suppr->execute();
+                        } catch(PDOException $e) {
+                            echo $sql2 . "<br>" . $e->getMessage();
+                        }                        
+                    }
+                ?>
                 
-        <h1>CONNEXION</h1>
-        <h2>Bravo vous etes connecter</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis, labore ipsum quos vel eveniet accusamus aperiam fuga iste commodi a tenetur error nobis, impedit itaque officia at? Magni, officiis. Explicabo!</p>
     </section>
 
     <?php

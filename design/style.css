@@ -397,14 +397,37 @@ footer li a{
 
 /*---------TABLEAU CONNEX---------*/
 #secconn {
-    margin-top: 250px;
-    border: red solid 2px;
+    width: 1680px;
+    margin-top: 100px;
+    /*border: red solid 2px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--police1);
 }
+table {
+    border-collapse: collapse;
+    font-family: 'Times New Roman', Courier, monospace;
+    font-size: 20px;
+    background-color: white;
+}
+
 tr,
 th,
 td {
+    padding: 3px;
     border: black solid 1px;
-    background-color: rgb(206, 206, 206);
+}
+
+
+
+tr:nth-child(odd) {
+    background: linear-gradient(0deg, rgba(223,223,223,1) 0%, rgba(205,205,205,1) 100%);
+}
+
+tr:first-child {
+    background: linear-gradient(0deg, rgba(194,194,194,1) 0%, rgb(170, 170, 170) 100%);
 }
 
 
