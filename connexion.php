@@ -31,18 +31,25 @@
             echo "ajouteur!"; /*PROBLEME LA PAGE SE REMET A JOUR */
         }
     ?>
-    <form action="get" method="connexion.php">
-        <label for="nom">Nom:</label><input name="nom" type="text">
-        <label for="prix">Prix:</label><input name="prix" type="text"><br>
-        <label for="note">Note:</label><input name="note" type="text">
-        <label for="ingredient">Ingredients:</label><input name="ingredient" type="text"><br>
-        <label for="img">Image:</label><input name="img" type="text"><br>
+
+    <form action="get" method="connexion.php" id="formulaire">
+        <div id="form-box">
+            <div class="col-input">
+                <label for="nom">Nom:</label><input name="nom" type="text"><br>
+                <label for="prix">Prix:</label><input name="prix" type="text"><br>
+                <label for="note">Note:</label><input name="note" type="text"><br>
+                <label for="ingredient">Ingredients:</label><input name="ingredient" type="text"><br>
+            </div>
+            <div class="col-input">
+                <label for="img">Image:</label><input name="img-upload" type="file"><br>
+            </div>
+        </div>
         <input type="submit" name="ajouter" value="Ajouter">
     </form>
 
    
 
-    <?php
+    <?php   
         $req = $db->prepare('SELECT * FROM cocktail');
         $req->execute();
         $testee = $req->fetchAll(PDO::FETCH_ASSOC);
@@ -73,10 +80,10 @@
                             </td>
                         </tr>';
                 }
-                echo';
-                </table>';
-                ?>
-                <?php
+                echo '</table>';     
+        ?>
+
+        <?php
                 if(isset($_GET['suppression'])) {
                     $index = $_GET['suppression'];
                     try {
@@ -96,14 +103,15 @@
                             echo $sql2 . "<br>" . $e->getMessage();
                         }                        
                     }
-                ?>
+        ?>
                 
-    </section>
+    
 
     <?php
         print_r($_SESSION);
         require 'composants/footer.php';
     ?>
+    </section>
 
 </div>
     

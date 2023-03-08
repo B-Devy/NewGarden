@@ -9,8 +9,10 @@
     --noir: rgb(23,23,23);
     --gris: #3d3d3d;
     --colorsign: rgb(151, 151, 151);
+    --btnactive: rgb(102, 102, 102);
     --ombre: #161616a4;
     --police1: 'Old Standard TT', serif;
+
 }
 * {
     box-sizing: border-box;
@@ -41,6 +43,7 @@ header {
     background-color: var(--noir);
     border: solid 3px #3d3d3d;
     width: 1680px;
+    height: 70px;
 }
 #logo {
     position: absolute;
@@ -78,14 +81,8 @@ header {
     /*border: dotted 2px yellow;*/
     list-style: none;;
     margin-left: 30px;
-}
-#menu a:link {
-    text-decoration: none;
-    /*color: white;*/
-}
-#menu a {
-    color: white;
-    
+    display: flex;
+    flex-direction: column;
 }
 #connex {
     position: absolute;
@@ -113,7 +110,7 @@ header {
     background-color: var(--gris);
 }
 #connex:active {
-    background-color: rgb(102, 102, 102);
+    background-color: var(--btnactive);
     color: black !important;
 }
 #connex p {
@@ -121,6 +118,22 @@ header {
     font-family: 'Old Standard TT', serif;
     font-size: 25px;  
 }
+.rectangle {
+    
+    width: 0px;
+    height: 2px;
+    background-color: white;
+    margin: auto;
+    animation: slide 2s;
+}
+
+@keyframes slide {
+    0%    { 
+        width: 0; 
+    }
+    100%  { width: 100%; }
+}
+
 /*--------------------CONNEXION------------------*/
 #connecbox {
     position: absolute;
@@ -128,7 +141,7 @@ header {
     background-color: var(--noir);
     border: solid 3px var(--gris);
     width: 300px;
-    height: 200px;
+    height: 240px;
     top: -210px;
     left: 1350px;
     padding: 10px;
@@ -149,9 +162,20 @@ header {
     font-size: 20px;
 }
 #btn_conn {
-    visibility: hidden;
-}
+    margin-top: 20px;
+    border: solid 3px var(--gris);
+    background-color: var(--noir);
+    color:white;
+    font-family: 'Old Standard TT', serif;
+    font-size: 25px;  
 
+}
+#btn_conn:hover {
+    background-color: var(--gris);
+}
+#btn_conn:active {
+    background-color: var(--btnactive);
+}   
 .cache1 {
    /* position: fixed !important;*/
     top: 80px !important;
@@ -250,7 +274,7 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    border: solid transparent 2px;
+    border: solid red 2px;
 }
 
 #sec2 h2,
@@ -285,12 +309,11 @@ header {
     
 }
 
-.fiche:last-child {
-    /*border: solid red 4px;*/
+/*.fiche:last-child {
     position: relative;
     top: 0px;
     left: -448px;
-}
+}*/
 .fiche h3 {
     font-size: 30px;
 }
@@ -395,17 +418,60 @@ footer li a{
     color: var(--colorsign);
 }
 
-/*---------TABLEAU CONNEX---------*/
+/*---------------------CONNEXTION.PHP---------------------------------------*/
 #secconn {
     width: 1680px;
     margin-top: 100px;
-    /*border: red solid 2px;*/
+    border: red solid 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: var(--police1);
 }
+
+/*---------COLONNE INPUT---------*/
+#formulaire {
+    border: blue solid 2px;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+#form-box {
+    display: flex;
+
+}
+.col-input {
+    position: relative;
+    border: red dotted 1px;
+    width: 450px;
+    height: 300px;
+    
+}
+
+.col-input label {
+    display: inline-block;
+    border: purple solid 2px;
+    width: 150px;
+    text-align: start;
+    margin-top: 30px;
+    font-size: 30px;
+
+}
+
+.col-input input {
+    margin: 0 0 0 30px;
+    width: 250px;
+    height: 30px;   
+}
+
+
+
+
+/*---------TABLEAU CONNEX---------*/
 table {
     border-collapse: collapse;
     font-family: 'Times New Roman', Courier, monospace;
@@ -420,8 +486,6 @@ td {
     border: black solid 1px;
 }
 
-
-
 tr:nth-child(odd) {
     background: linear-gradient(0deg, rgba(223,223,223,1) 0%, rgba(205,205,205,1) 100%);
 }
@@ -429,6 +493,12 @@ tr:nth-child(odd) {
 tr:first-child {
     background: linear-gradient(0deg, rgba(194,194,194,1) 0%, rgb(170, 170, 170) 100%);
 }
+
+
+
+
+
+
 
 
 

@@ -3,6 +3,7 @@
     include('admin/config.php');
     error_reporting(0);
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,12 +13,8 @@
     <title>New Garden Bar</title>
     <link rel="stylesheet" href="design/style.css">
     <script src="design/script.js" defer></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-     crossorigin=""/> <!--css de leaflet-->
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>  <!--js de leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/> <!--css de leaflet-->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>  <!--js de leaflet-->
 </head>
 
 <body> 
@@ -33,7 +30,8 @@
     </section>
 
     <?php
-    print_r($_SESSION);
+    echo "Information construction S_SESSION : ";
+    print_r($_SESSION) /*---------------à enlever quand fini---------------*/;
     ?>
 
     <section id="sec2">

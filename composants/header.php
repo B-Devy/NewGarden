@@ -23,16 +23,16 @@
 <div id="headeretendu"> 
     <header>
         <div id="logo">
-            <div></div>
+        <a href="../newgarden"><div></div></a>
         </div>
 
         <div id="menu">
             <ul>
-                <li class="rubrique"><a href="../newgarden">Accueil</a></li>    
-                <li class="rubrique">Notre Concept</li>    
-                <li class="rubrique">Le Bar</li>    
-                <li class="rubrique">Nos Cocktails</li>    
-                <li class="rubrique">Accès</li>    
+                <li class="rubrique"><div>Accueil</div></li>    
+                <li class="rubrique"><div>Notre Concept</div></li>    
+                <li class="rubrique"><div>Le Bar</div></li>    
+                <li class="rubrique"><div>Nos Cocktails</div></li>    
+                <li class="rubrique"><div>Accès</div></li>    
             </ul>
         </div>
 

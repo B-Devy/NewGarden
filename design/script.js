@@ -1,5 +1,6 @@
 var connex = document.getElementById('connex');
 var connecbox = document.getElementById('connecbox');
+document.querySelector('#btn_conn').addEventListener('submit', e => e.preventDefault())
 
 connex.addEventListener('click', function(){
     connecbox.classList.toggle('cache1');
@@ -9,6 +10,9 @@ connex.addEventListener('click', function(){
 /*-------NAVIGATION DU MENU--------*/
 var rubrique = document.querySelectorAll('#menu ul li');
 
+rubrique[0].addEventListener('click', function() {
+    window.scroll({top:0, behavior: 'smooth'});
+});
 rubrique[1].addEventListener('click', function() {
     window.scroll({top:800, behavior: 'smooth'});
 });
@@ -21,6 +25,21 @@ rubrique[3].addEventListener('click', function() {
 rubrique[4].addEventListener('click', function() {
     window.scroll({top:3250, behavior: 'smooth'});
 });
+
+/*----------SOUS LIGNER-------------*/
+var rectmenu = document.querySelectorAll('.rubrique');
+
+rectmenu.forEach( clic => clic.addEventListener("mouseover", event => {
+    event.currentTarget.insertAdjacentHTML("beforeend", `<div class="rectangle"></div>`);
+    })
+)
+
+rectmenu.forEach(clic => clic.addEventListener("mouseout", () => {
+    var rect = document.querySelectorAll('.rectangle');
+    rect.forEach(e => e.remove());
+    })
+)
+
 
 /*-------MAP LEAFLET-------*/
 var map = L.map('map').setView([48.578984, 7.755616], 14);
