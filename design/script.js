@@ -1,6 +1,8 @@
 var connex = document.getElementById('connex');
 var connecbox = document.getElementById('connecbox');
+
 document.querySelector('#btn_conn').addEventListener('submit', e => e.preventDefault())
+//document.querySelector('#btn-submit-form').addEventListener('submit', e => e.preventDefault())
 
 connex.addEventListener('click', function(){
     connecbox.classList.toggle('cache1');

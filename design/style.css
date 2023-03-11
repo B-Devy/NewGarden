@@ -84,6 +84,10 @@ header {
     display: flex;
     flex-direction: column;
 }
+#menu div {
+    user-select: none;
+    cursor: pointer;
+}
 #connex {
     position: absolute;
     top:5px;
@@ -95,8 +99,10 @@ header {
     justify-content: center;
     align-items: center;
     padding: 0 5px 0 5px;
-    
-    
+}
+#connex p {
+    user-select: none;
+    cursor: pointer;
 }
 #favconnex {
     color: white;
@@ -153,6 +159,7 @@ header {
     font-size: 25px;
     color:white;
     margin-bottom: 125px;
+    user-select: none;   
 }
 
 #connecbox input {
@@ -168,7 +175,8 @@ header {
     color:white;
     font-family: 'Old Standard TT', serif;
     font-size: 25px;  
-
+    user-select: none;
+    cursor:pointer;
 }
 #btn_conn:hover {
     background-color: var(--gris);

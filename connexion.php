@@ -1,6 +1,37 @@
 <?php
     include('admin/config.php'); /*important de mettre avant la session, visiblement */
-    session_start()
+    session_start();
+    $fichier = " ";
+
+    if (!empty($_POST['nom']) && !empty($_POST['prix']) && !empty($_POST['note']) && !empty($_POST['ingredient']) && !empty($_POST['image'])) {
+        
+        
+        
+      
+
+    if (isset($_FILES['image']) && $_FILES["image"]['error'] == 0) {
+        $error = 1;
+
+        if($_FILES["image"]['size'] <= 3000000) {
+
+            // extensions
+            $informationsImage = pathinfo($_FILES['image']['name']);
+            $extensionImage = $informationsImage['extension'];
+            $extensionsArray = array('jpg', 'png', 'jpeg', 'gif');
+
+            if(in_array($extensionImage, $extensionsArray)) {
+                $adresse = 'uploads/'.time().rand(). '.' .$extensionImage;
+                move_uploaded_file($_FILES['image']['tmp_name'], $adresse);
+                $error = 0;
+                $fichier = $_FILES['image'];
+            }
+        }
+        
+        header('location: connexion.php?success=1'); 
+        exit();
+
+        }
+    }  
 ?>
 
 <!DOCTYPE html>
@@ -24,15 +55,14 @@
     <h1>CONNEXION</h1>
 
     <?php
-    echo "<h2>Bonjour ".$_SESSION['mail'].", vous etes connecter</h2>";
-    ?>
-    <?php
-        if(isset($_GET['ajouter'])) {
-            echo "ajouteur!"; /*PROBLEME LA PAGE SE REMET A JOUR */
-        }
+    echo "<h2>Bonjour ".$_SESSION['mail'].", vous êtes connecté</h2>";
+    echo "voilà le files de l'img: ";
+    echo "<pre>";
+    print_r($fichier);
+    echo "</pre>";
     ?>
 
-    <form action="get" method="connexion.php" id="formulaire">
+    <form method="post" action="connexion.php" id="formulaire" enctype="multipart/form-data"> <!--attention à ne pas intervertir method correspond à get/post-->
         <div id="form-box">
             <div class="col-input">
                 <label for="nom">Nom:</label><input name="nom" type="text"><br>
@@ -41,10 +71,19 @@
                 <label for="ingredient">Ingredients:</label><input name="ingredient" type="text"><br>
             </div>
             <div class="col-input">
-                <label for="img">Image:</label><input name="img-upload" type="file"><br>
+                <label for="img">Image:</label><input name="image" type="file"><br>
+                        <?php
+                        if (isset($error) && $error == 0) {
+                            echo '<img src="' .$adresse. '" id="image" />
+                            <input type="text" value="http://localhost/' .$adresse. '"/>';
+                            
+                        } else if (isset($error) && $error == 1) {
+                            echo 'Votre image ne peut pas être envoyée';
+                        }
+                        ?>
             </div>
         </div>
-        <input type="submit" name="ajouter" value="Ajouter">
+        <input id="btn-submit-form" type="submit" value="Ajouter">
     </form>
 
    
@@ -110,6 +149,7 @@
     <?php
         print_r($_SESSION);
         require 'composants/footer.php';
+        require 'composants/signature.php';
     ?>
     </section>
 
