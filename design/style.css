@@ -279,10 +279,11 @@ header {
 }
 #img_sec_4 {
     width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border: solid red 2px;
+    /*border: solid red 2px;*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 600px;
+    justify-items: center;
 }
 
 #sec2 h2,
@@ -316,12 +317,6 @@ header {
     font-family: var(--police1);
     
 }
-
-/*.fiche:last-child {
-    position: relative;
-    top: 0px;
-    left: -448px;
-}*/
 .fiche h3 {
     font-size: 30px;
 }
@@ -415,6 +410,7 @@ footer li a{
 #signature {
     background-color: var(--noir);
     border: solid 3px var(--gris);
+    width: 1680px;
 }
 #signature p{
     color: var(--colorsign);
@@ -506,7 +502,17 @@ tr:first-child {
 
 
 
+/*---------------IDEES
+faire cookies
+espace avec nom pour inscription client et commentaire
+mise en forme horraire
+nouveau header pour admin
+page inscription
 
+
+
+
+*/
 
 
 
