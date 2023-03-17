@@ -25,7 +25,7 @@ rubrique[3].addEventListener('click', function() {
     window.scroll({top:1950, behavior: 'smooth'});
 });
 rubrique[4].addEventListener('click', function() {
-    window.scroll({top:3250, behavior: 'smooth'});
+    window.scroll({top:3850, behavior: 'smooth'});
 });
 
 /*----------SOUS LIGNER-------------*/
@@ -42,13 +42,13 @@ rectmenu.forEach(clic => clic.addEventListener("mouseout", () => {
     })
 )
 
-
 /*-------MAP LEAFLET-------*/
-var map = L.map('map').setView([48.578984, 7.755616], 14);
+var map = L.map('map',{scrollWheelZoom: false}).setView([48.578984, 7.755616], 16);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    maxZoom: 18,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    
 }).addTo(map);
 
 var marker = L.marker([48.578984, 7.755616]).addTo(map);

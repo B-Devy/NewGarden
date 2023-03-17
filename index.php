@@ -2,6 +2,10 @@
     session_start();
     include('admin/config.php');
     error_reporting(0);
+    setcookie('user_pref', 'dark_theme', time() + 3600*24, '/', '', true, true);
+    setcookie('user_id', '1234');
+    setcookie('name', 'Bertos');
+
 ?>
 
 <!DOCTYPE html>
@@ -30,8 +34,18 @@
     </section>
 
     <?php
+
     echo "Information construction S_SESSION : ";
+    $_SESSION['user'] = $_COOKIE['PHPSESSID'];
+    $_SESSION['cookie_name'] = $_COOKIE['user_id'];
+    $_SESSION['cookie_expires'] = $_COOKIE['user_pref'];
+    $_SESSION['cookie_name'] = $_COOKIE['name'];
     print_r($_SESSION) /*---------------à enlever quand fini---------------*/;
+    echo "<br>";
+    echo "<pre>";
+    print_r($_COOKIE) /*---------------à enlever quand fini---------------*/;
+    echo "</pre>";
+    echo $_COOKIE['expires'];
     ?>
 
     <section id="sec2">
@@ -61,8 +75,37 @@
     </section>
 
     <section id="sec5">
-        <h2>Accès</h2>
-        <div id="map"></div>
+        <div id="horaire">
+            <h2>Accès</h2>
+            <div>
+                <div id="horaire1">
+                    <div id="logo3"></div>
+                    <p id="presentation">Situé au coeur du quartier de la Krutenau, le nouveau restaurant bar New Garden Strasbourg vous accueille en terrasse ou à l'intérieur dans une ambiance lounge avec décors authentiques et un superbe espace billard. A 200m des quais de l'Ill, venez découvrir nos burgers maison ou partager un cocktail en happy hour.</p>
+                    <div id="map"></div>
+                </div>
+                <div id="horaire2">
+                    <h3>INFORMATIONS PRATIQUES</h3>
+                    <p>Horaire</p>
+                    <p>Service continu tous les jours</p>
+                    <p>..........</p>
+                    <p>Lundi-Vendredi 7h30 - 23h</p>
+                    <p>Samedi-Dimanche 7h30 - 1h00</p>
+                    <p>Petits déjeuners jusqu'à 11h30</p>
+                    <p>Brunch 11h - 16h</p>
+                    <p>HAPPY HOURS 17h - 20h</p>
+                    <br>
+                    <h3>TELEPHONE</h3>
+                    <p>03 88 52 52 21 08</p>
+                    <br>
+                    <h3>ADRESSE</h3>
+                    <p>8, route des fougères 67000 STRASBOURG</p>
+                    <br>
+                    <h3>ACCES</h3>
+                    <p>tram A arrêt "étoile" ou tram D arrêt "Grand rue"</p>
+                </div>
+            </div>
+            
+        </div>
     </section>
 <?php
     require 'composants/footer.php';

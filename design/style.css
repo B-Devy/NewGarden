@@ -352,9 +352,63 @@ header {
     /*border: solid white 1px;*/
 }
 /*-------------MAP-----------------*/
+#horaire {
+    background-color: var(--noir);
+    width: 1200px;
+    height: 1015px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+#horaire > div {
+    position: relative;
+    /*border: 2px blue solid;*/
+    display: flex;
+}
+#horaire h2 {
+    color:white;
+    text-align: center;
+}
+#horaire2,
+#horaire1 {
+    /*border: 2px white solid;*/
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#horaire2 {
+    border: 2px white solid;
+    margin: 25px;
+    padding-top: 45px;
+}
+#logo3 {
+    width: 200px;
+    height: 155px;
+    background-image: url(../assets/logotransp.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*border: solid yellow 2px;*/
+}
+#horaire h3 {
+    color:white;
+    font-family: 'Old Standard TT', serif;
+    font-size: 30px;
+    margin-top: 25px;
+}
+#horaire p {
+    color:white;
+    font-family: 'Old Standard TT', serif;
+    font-size: 25px;
+}
+#presentation {
+    font-size: 20px !important;
+    width: 500px;
+}
 #sec5 {
     background-color: var(--fond2);
     width: 1680px;
+    height: 1100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -363,13 +417,12 @@ header {
 #map {
     position: relative;
     z-index: 1;
-    width: 1200px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     border: solid 3px var(--gris);
-    margin-bottom: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
-
-
 
 
 /*-------------FOOTER-----------------*/
@@ -508,6 +561,8 @@ espace avec nom pour inscription client et commentaire
 mise en forme horraire
 nouveau header pour admin
 page inscription
+faire une newsletter
+commentaire en POO
 
 
 

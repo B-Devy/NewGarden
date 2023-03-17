@@ -1,6 +1,7 @@
 <?php
     include('admin/config.php'); /*important de mettre avant la session, visiblement */
     session_start();
+    
 
     $fichier = "";
     $nomErreur = "PAS POSTEE";
@@ -141,7 +142,7 @@
             <div class="col-input">
                 <label for="nom">Nom:</label><input name="nom" type="text"><br>
                 <label for="prix">Prix:</label><input name="prix" type="number" min="0" max="100" step="0.01"><br>
-                <label for="note">Note:</label><input name="note" type="number" min="0" max="5" step="0.01"><br>
+                <label for="note">Note:</label><input name="note" type="number" min="0" max="5" step="0.1"><br>
                 <label for="ingredient">Ingredients:</label><input name="ingredient" type="text"><br>
             </div>
             <div class="col-input">
