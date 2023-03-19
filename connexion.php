@@ -120,7 +120,7 @@
 <body>
 <div id="limite">
     <?php
-        require 'composants/header.php';
+        require 'composants/header2.php';
     ?>
 
     <section id="secconn">
@@ -146,7 +146,7 @@
                 <label for="ingredient">Ingredients:</label><input name="ingredient" type="text"><br>
             </div>
             <div class="col-input">
-                <label for="img">Image:</label><input name="image" type="file"><br>
+                <label for="img">Image:</label><input name="image" type="file" id="img_input"><br>
                         <?php
                         if (isset($error) && $error == 0) {
                             echo '<img src="' .$adresse. '" id="image" />
@@ -158,7 +158,7 @@
                         ?>
             </div>
         </div>
-        <input id="btn-submit-form" type="submit" value="Ajouter">
+        <input id="btn-submit-form" class="btn_noir" type="submit" value="Ajouter">
     </form>
 
     <?php   
@@ -186,7 +186,7 @@
                             <td>'.$truc['img'].'</td>
                             <td>
                             <form method="get">
-                                <input type="text" name="suppression" value="'.$truc['id'].'"  />
+                                <input type="text" class="input_nonvisible" name="suppression" value="'.$truc['id'].'"  />
                                 <input type="submit"  id="'.$truc['id'].'" value="Supprimer"/>
                             </form>
                             </td>

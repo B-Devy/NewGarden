@@ -31,16 +31,16 @@ rubrique[4].addEventListener('click', function() {
 /*----------SOUS LIGNER-------------*/
 var rectmenu = document.querySelectorAll('.rubrique');
 
-rectmenu.forEach( clic => clic.addEventListener("mouseover", event => {
-    event.currentTarget.insertAdjacentHTML("beforeend", `<div class="rectangle"></div>`);
-    })
-)
+    rectmenu.forEach( clic => clic.addEventListener("mouseover", event => {
+        event.currentTarget.insertAdjacentHTML("beforeend", `<div class="rectangle"></div>`);
+        })
+    )
 
-rectmenu.forEach(clic => clic.addEventListener("mouseout", () => {
-    var rect = document.querySelectorAll('.rectangle');
-    rect.forEach(e => e.remove());
-    })
-)
+    rectmenu.forEach(clic => clic.addEventListener("mouseout", () => {
+        var rect = document.querySelectorAll('.rectangle');
+        rect.forEach(e => e.remove());
+        })
+    )
 
 /*-------MAP LEAFLET-------*/
 var map = L.map('map',{scrollWheelZoom: false}).setView([48.578984, 7.755616], 16);

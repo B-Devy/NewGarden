@@ -131,6 +131,7 @@ header {
     background-color: white;
     margin: auto;
     animation: slide 2s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes slide {
@@ -138,6 +139,10 @@ header {
         width: 0; 
     }
     100%  { width: 100%; }
+}
+#header2_lien {
+    color: white;
+    text-decoration: none;
 }
 
 /*--------------------CONNEXION------------------*/
@@ -479,7 +484,7 @@ footer li a{
 #secconn {
     width: 1680px;
     margin-top: 100px;
-    border: red solid 2px;
+    /*border: red solid 2px;*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -487,71 +492,88 @@ footer li a{
     font-family: var(--police1);
 }
 
-/*---------COLONNE INPUT---------*/
+/*---------FORMULAIRE INPUT---------*/
 #formulaire {
-    border: blue solid 2px;
-    width: 900px;
+    width: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 35px;
+    background-color: var(--noir);
+    padding: 50px;
 }
-
 #form-box {
     display: flex;
-
 }
 .col-input {
     position: relative;
-    border: red dotted 1px;
+    /*border: red dotted 1px;*/
     width: 450px;
     height: 300px;
-    
 }
-
 .col-input label {
     display: inline-block;
-    border: purple solid 2px;
+    color: white;
     width: 150px;
     text-align: start;
     margin-top: 30px;
     font-size: 30px;
-
 }
-
 .col-input input {
     margin: 0 0 0 30px;
     width: 250px;
     height: 30px;   
+    outline: none;
+}
+.col-input input:focus {
+    outline: 3px solid var(--btnactive);
 }
 
-
-
-
+#img_input {
+    color: white;
+}
+.btn_noir {
+    user-select: none;
+    cursor: pointer;    
+    color:white;
+    font-family: 'Old Standard TT', serif;
+    font-size: 25px;  
+    background-color: var(--noir);
+    width: 220px;
+    margin: auto;
+    margin-top: 25px;
+}
+.btn_noir:hover {
+    background-color: var(--gris);
+}
+.btn_noir:active {
+    background-color: var(--btnactive);
+    color: black !important;
+}
 /*---------TABLEAU CONNEX---------*/
 table {
+    width: 1000px;
     border-collapse: collapse;
     font-family: 'Times New Roman', Courier, monospace;
     font-size: 20px;
     background-color: white;
+    margin-bottom: 25px;
 }
-
 tr,
 th,
 td {
     padding: 3px;
     border: black solid 1px;
 }
-
 tr:nth-child(odd) {
     background: linear-gradient(0deg, rgba(223,223,223,1) 0%, rgba(205,205,205,1) 100%);
 }
-
 tr:first-child {
     background: linear-gradient(0deg, rgba(194,194,194,1) 0%, rgb(170, 170, 170) 100%);
 }
-
-
+.input_nonvisible {
+    display: none;
+}
 
 
 
